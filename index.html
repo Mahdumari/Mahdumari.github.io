@@ -1,0 +1,355 @@
+<!doctype html>
+<html lang="id">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Web Kelas XI TKJ 2 — Portal Kelas</title>
+<meta name="description" content="Website kelas: slider, galeri, struktur 38 siswa, jadwal piket, pengurus, partikel latar, dark/light mode." />
+
+<!-- =========================
+     STYLES
+     ========================= -->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Particle canvas -->
+<canvas id="particles"></canvas>
+
+<!-- Main wrapper -->
+<div class="wrap">
+
+  <!-- HEADER -->
+  <header>
+    <div class="brand">
+      <!-- LOGO KELAS: ganti URL dengan logo asli -->
+      <img src="logo sekolah.jpg" alt="Logo TKJ 2" class="logo-img">
+
+      <div>
+        <h1>Web Kelas XI TKJ 2</h1>
+        <p class="sub">Hello everyone, welcome to our class website.</p>
+      </div>
+    </div>
+
+    <div class="top-controls">
+      <button id="modeToggle" class="btn">🌙 Mode</button>
+      <button id="musicToggle" class="btn">▶ Musik</button>
+    </div>
+  </header>
+
+  <!-- Floating navigation -->
+  <nav class="floating" aria-label="Navigasi cepat">
+    <a href="#home">🏠 Home</a>
+    <a href="#struktur">👥 Struktur</a>
+    <a href="#piket">🧹 Piket</a>
+    <a href="#pengurus">⭐ Pengurus</a>
+    <a href="#galeri">📸 Galeri</a>
+    <a href="#pesan">💬 Pesan</a>
+  </nav>
+
+  <!-- HERO + SIDEBAR -->
+  <main class="hero" id="home">
+
+    <!-- LEFT: slider + gallery + quotes -->
+    <div class="card" data-animate>
+      <!-- SLIDER -->
+      <div class="slider" id="slider">
+        <div class="slides" id="slides">
+          <div class="slide show" style="background-image:url('WhatsApp Image 2025-12-01 at 11.45.07_aff9d2d8.jpg')">
+            <div class="caption">
+              <h2>MPLS Kelas X</h2>
+              <p class="sub">Foto kenangan & momen spesial.</p>
+            </div>
+          </div>
+          <div class="slide" style="background-image:url('WhatsApp Image 2025-12-01 at 11.45.44_1530026a.jpg')">
+            <div class="caption">
+              <h2>Perkenalan Siswa</h2>
+              <p class="sub">Foto bersama.</p>
+            </div>
+          </div>
+          <div class="slide" style="background-image:url('WhatsApp Image 2025-12-01 at 11.46.02_550e60ca.jpg')">
+            <div class="caption">
+              <h2>Camp</h2>
+              <p class="sub">Kenangan kebersamaan.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="controls">
+          <button id="prev" class="btn">⟨</button>
+          <button id="next" class="btn">⟩</button>
+        </div>
+
+        <div class="dots" id="dots" aria-hidden="false"></div>
+      </div>
+
+      <!-- MARQUEE QUOTES -->
+      <div class="marquee" data-animate>
+        <p>“SMK BISA - SMK HEBAT SULUNG JAYA JAYA JAYA.”</p>
+      </div>
+
+      <!-- GALLERY -->
+      <section id="galeri" data-animate>
+        <h3 style="margin-top:14px">Galeri Kelas</h3>
+        <div class="gallery" id="gallery">
+          <!-- sample images, ganti sesuai file kelas -->
+          <img src="WhatsApp Image 2025-11-28 at 11.39.05_d3144bf2.jpg" alt="foto1">
+          <img src="WhatsApp Image 2025-12-01 at 11.45.52_bce4f52b.jpg" alt="foto2">
+          <img src="WhatsApp Image 2025-12-01 at 11.46.02_ed7231e8.jpg" alt="foto3">
+          <img src="class3.jpg" alt="foto4">
+          <img src="class 1.jpg" alt="foto5">
+          <img src="class2.jpg" alt="foto6">
+        </div>
+      </section>
+    </div>
+
+    <!-- RIGHT: sidebar (pengumuman, wali kelas, struktur mini) -->
+    <aside class="card" data-animate>
+      <h3>Catatan</h3>
+      <div class="sub" style="margin-bottom:12px">
+        • Website ini dibuat oleh M. Arifin<br>
+        • Web ini akan refresh konten secara berkala<br>
+      </div>
+
+      <!-- wali kelas -->
+      <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
+        <!-- ganti foto wali kelas -->
+        <img src="class2.jpg" alt="Bu Melinda" class="avatar">
+        <div>
+          <div style="font-weight:700">Bu Melinda</div>
+          <div class="sub">Wali Kelas XI TKJ 2</div>
+          <small class="muted">Contact: +62 895-3293-92006</small>
+        </div>
+      </div>
+
+      <!-- Struktur ringkas -->
+      <h4>Struktur Kelas</h4>
+      <div style="display:flex;flex-direction:column;gap:8px">
+        <div style="display:flex;gap:8px;align-items:center">
+          <div style="width:40px;height:40px;border-radius:8px;background:var(--glass-blue);display:flex;align-items:center;justify-content:center">ME</div>
+          <div>
+            <div style="font-weight:700">Nama perwakilan</div>
+            <div class="sub">Ketua kelas: Meilinda</div>
+          </div>
+        </div>
+
+        <a href="#struktur" class="btn ghost" style="width:100%; text-align:center">Lihat Struktur Lengkap</a>
+      </div>
+
+      <!-- Jadwal singkat (link ke jadwal lengkap) -->
+      <h4 style="margin-top:12px">Jadwal</h4>
+      <div class="sub">
+        <a href="#jadwal" class="btn ghost" style="width:100%; text-align:center; display:inline-block; margin-bottom:8px">Lihat Jadwal Pelajaran Mingguan</a>
+        Senin — PPKK, Matematika, PPKn, Bahasa Indonesia<br>
+        Selasa — Keahlian 3, PAI, Bahasa Inggris, Keahlian 1<br>
+        Rabu — keahlian 2, Teknologi Informasi, PAI, Matematika<br>
+      </div>
+    </aside>
+  </main>
+
+  <!-- STRUKTUR KELAS DETAIL -->
+  <section id="struktur" class="card" data-animate>
+    <h2>Nama Siswa TKJ 2</h2>
+    <small class="muted">Klik nama untuk highlight</small>
+
+    <div class="struktur" id="struktur-grid" style="margin-top:12px">
+      <!-- items will be injected by script -->
+    </div>
+
+    <!-- JADWAL PIKET -->
+    <h3 style="margin-top:16px">Jadwal Piket</h3>
+    <div id="piket" class="piket">
+      <div class="item"><strong>Senin</strong><br>Wira, Vanessa, Syfa, Shofi, Okta , Sela, Rizky</div>
+      <div class="item"><strong>Selasa</strong><br>Ridho, Reza, Putri, Putra, Aeni, Sobbah, Nita</div>
+      <div class="item"><strong>Rabu</strong><br>Nia, Taufik, Dzaky, Monika, Meilinda, Meilina, Marsya, Arifin</div>
+      <div class="item"><strong>Kamis</strong><br>Kholifa, Keyla, Hakam, Hafiz, Girald, Fitriyani, Fatikha, Elfina</div>
+      <div class="item"><strong>Jumat</strong><br>Ayu, Aulya, Arie, Ardi, Ardina, Andika, Adrian, Adinda</div>
+    </div>
+  </section>
+
+  <!-- JADWAL PELAJARAN LENGKAP -->
+  <section id="jadwal" class="card" data-animate>
+    <h2>Jadwal Pelajaran XI TKJ 2</h2>
+    <small class="muted">Rangkaian mata pelajaran per hari (4–5 pelajaran/hari)</small>
+    <div class="schedule-wrap">
+      <table class="schedule-table" aria-label="Jadwal Pelajaran Mingguan">
+        <thead>
+          <tr><th>Hari</th><th>Jam & Mata Pelajaran</th></tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Senin</td>
+            <td>
+              07:15 — PPKK<br>
+              08:45 — Matematika<br>
+              10:45 — PPKn<br>
+              12:45 — Bahasa Indonesia
+            </td>
+          </tr>
+          <tr>
+            <td>Selasa</td>
+            <td>
+              06:30 — Keahlian 3<br>
+              08:00 — PAI<br>
+              10:00 — Bahasa Indonesia<br>
+              11:30 — Bahasa Inggris<br>
+              13:25 — Keahlian 1
+            </td>
+          </tr>
+          <tr>
+            <td>Rabu</td>
+            <td>
+              06:30 — Keahlian 2<br>
+              10:00 — Teknologi Informasi<br>
+              11:30 — PAI<br>
+              13:25 — Matematika<br>
+            </td>
+          </tr>
+          <tr>
+            <td>Kamis</td>
+            <td>
+              06:30 — Keahlian 3<br>
+              10:00 — Keahlian 1<br>
+              13:25 — Sejarah<br>
+            </td>
+          </tr>
+          <tr>
+            <td>Jumat</td>
+            <td>
+              06:30 — Keahlian 2<br>
+              07:50 — PJOK<br>
+              09:40 — Bahasa Inggris<br>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- PENGURUS KELAS -->
+  <section id="pengurus" class="card" data-animate>
+    <h2>Pengurus Kelas</h2>
+    <div class="pengurus">
+      <!-- Individual cards for each pengurus with avatar initials -->
+      <div class="card-mini">
+        <div class="avatar-initial">ME</div>
+        <div>
+          <div style="font-weight:700">Melinda Nurhasanah</div>
+          <small class="muted">Ketua Kelas</small>
+        </div>
+      </div>
+
+      <div class="card-mini">
+        <div class="avatar-initial">DZ</div>
+        <div>
+          <div style="font-weight:700">M. Dzaky Gurfan</div>
+          <small class="muted">Wakil Ketua</small>
+        </div>
+      </div>
+
+      <div class="card-mini">
+        <div class="avatar-initial">AD</div>
+        <div>
+          <div style="font-weight:700">Adinda F.G</div>
+          <small class="muted">Sekretaris</small>
+        </div>
+      </div>
+
+      <div class="card-mini">
+        <div class="avatar-initial">FI</div>
+        <div>
+          <div style="font-weight:700">Shofi</div>
+          <small class="muted">Bendahara</small>
+        </div>
+      </div>
+
+      <div class="card-mini">
+        <div class="avatar-initial">NI</div>
+        <div>
+          <div style="font-weight:700">Aeni</div>
+          <small class="muted">Bendahara</small>
+        </div>
+      </div>
+
+      <div class="card-mini">
+        <div class="avatar-initial">NI</div>
+        <div>
+          <div style="font-weight:700">Nia</div>
+          <small class="muted">Kebersihan</small>
+        </div>
+      </div>
+
+      <div class="card-mini">
+        <div class="avatar-initial">MS</div>
+        <div>
+          <div style="font-weight:700">Marsya</div>
+          <small class="muted">Kebersihan</small>
+        </div>
+      </div>
+
+      <div class="card-mini">
+        <div class="avatar-initial">RI</div>
+        <div>
+          <div style="font-weight:700">Ari</div>
+          <small class="muted">Keagamaan</small>
+        </div>
+      </div>
+
+      <div class="card-mini">
+        <div class="avatar-initial">FIK</div>
+        <div>
+          <div style="font-weight:700">Taufik</div>
+          <small class="muted">Keagamaan</small>
+        </div>
+      </div>
+
+      <div class="card-mini">
+        <div class="avatar-initial">GI</div>
+        <div>
+          <div style="font-weight:700">Girald</div>
+          <small class="muted">Kedisiplinan</small>
+        </div>
+      </div>
+
+      <div class="card-mini">
+        <div class="avatar-initial">FIN</div>
+        <div>
+          <div style="font-weight:700">Arifin</div>
+          <small class="muted">Kedisiplinan</small>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PESAN & KESAN SISWA -->
+  <section id="pesan" class="card" data-animate>
+    <h2>Pesan & Kesan Siswa</h2>
+    <div class="testimonials" id="testimonials">
+      <div class="testi">“Teruslah menuntut ilmu walau sadar diri kita blm mampu mencerna.” — <strong>Ipin</strong></div>
+      <div class="testi">“Siswa nya banyak yang aktif & tidak ada kata tenang” — <strong>Putra</strong></div>
+      <div class="testi">“Kelas yang ramai kayak pasar!” — <strong>Girald</strong></div>
+    </div>
+
+    <!-- form kecil untuk menambah pesan (local only) -->
+    <div style="margin-top:12px; display:flex; gap:8px; align-items:center">
+      <input id="msgName" placeholder="Nama" style="flex:0 0 140px; padding:8px; border-radius:8px; border:1px solid rgba(255,255,255,0.06); background:transparent; color:inherit">
+      <input id="msgText" placeholder="Tulis pesan..." style="flex:1; padding:8px; border-radius:8px; border:1px solid rgba(255,255,255,0.06); background:transparent; color:inherit">
+      <button id="addMsg" class="btn">Kirim</button>
+    </div>
+    <small class="muted" style="display:block; margin-top:6px">Pesan tersimpan di browser (localStorage).</small>
+  </section>
+
+  <footer style="margin-top:18px; color:var(--muted-2); text-align:center">
+    © 2025 XI TKJ 2 — SMK SULTAN AGUNG
+  </footer>
+</div>
+
+<!-- LIGHTBOX TEMPLATE (hidden) -->
+<div id="lightbox-root" style="display:none"></div>
+
+<!-- =========================
+     SCRIPTS
+     ========================= -->
+<script src="script.js"></script>
+</body>
+</html>
